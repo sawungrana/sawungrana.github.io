@@ -1,0 +1,8 @@
+# Associations
+# comment out the urls if you do not wish to display them
+
+- organization: School Bar
+  role: Volunteer
+  year: 2001 &mdash; 2010
+  url: https://tihlde.org/
+  summary: The School bar is used by both engineers and other diciplines to socialize. Some responsibilities I had were to work behind the bar and checking IDs at the entrance.

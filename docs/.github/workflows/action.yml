@@ -1,0 +1,29 @@
+name: CI
+on:
+  push:
+    branches:
+      - gh-pages
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Gatsby Publish
+        uses: enriikke/gatsby-gh-pages-action@v2.1.1
+        with:
+          access-token: ${{ secrets.ACCESS_TOKEN }}
+          deploy-branch: gh-pages
+          gatsby-args: --prefix-paths
+      - name: Webpage to PDF
+        uses: SetiZ/web_to_pdf_action@master
+        with:
+          webPageURL: https://bjornamr.github.io/resume-template/
+          outputFile: webpage/resume.pdf
+          usePuppeteer: true
+          pdfOptions: '{"format": "A4", "margin": {"left": "2cm", "top": "4cm", "right": "1cm", "bottom": "3.5cm"}}'
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Generate PDF
+          branch: gh-pages
+          file_pattern: webpage/resume.pdf

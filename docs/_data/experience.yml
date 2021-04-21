@@ -1,0 +1,25 @@
+# Jobs
+# VP of Global Communications
+- company: Microchip
+  position: Application Engineer
+  duration: Aug, 2020 &mdash; Present
+  summary: Writing software both for microcontrollers in C and general backend development. 
+ # summary: Writing software both for chips and sentences describing your position. If you held the position for a long time, it could be a longer section, including a couple bullet points	<ul class="resume-item-list"><li>A project you are proud of</li><li>Another awesome project</li><li>or a team or department you worked with</li></ul>
+
+# Director of Digital Stratgy
+- company: Capgemini
+  position: Data Scientist
+  duration:  Jan, 2019 &mdash; Aug, 2020
+  summary: Worked with a team that specializing in Computer Vision. One of my projects at a startup that used underwater cameras in fish farms was to try to create a program to monitor the health of the fish using Computer Vision.
+
+
+# Communications Coordinator
+- company: Making Waves
+  position: Data Scientist
+  duration:   Jul, 2017  &mdash; Dec, 2018
+  summary: Worked as a general developer and Data Scientist. Two of the projects including Machine Learning were a Norwegian Chatbot project in python and Proof of Concept testing Computer Vision in Elastic Search.
+
+- company: Kodeklubben Trondheim 
+  position: Instructor - Internship
+  duration:   Jun, 2016  &mdash; Jul, 2016
+  summary: Kodeklubben is a Norwegian initative to teach children coding. This internship was about teaching HTMl, CSS, JavaScript to people from junior high school and high school.
