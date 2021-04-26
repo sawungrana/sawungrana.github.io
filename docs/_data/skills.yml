@@ -1,5 +1,25 @@
 # Skills
-# Organizational leadership
-- skill: Parallel Progamming
-  description: Took a course in 2020 at NTNU in parallel rogramming that covered CUDA, OpenMPI, OpenMP and Pthreads. Implemented Convolution in OpenMPI and CUDA getting Ideas from the paper Ghost Cell Pattern
-# Communications strategy
+
+- skill: English - IELTS 7.5
+  description: Professional and academic C1 Advanced Proficient User of English.
+
+- skill: Agile Methodologies
+  description: Agile methodologies for software development to improve team pace and innovation.
+
+- skill: Software Development Lifecycle (SDLC)
+  description: Understanding and practical experience on SDLC to equip company with strong system of software delivery.
+
+- skill: Software Design
+  description: Understanding and experience on designing software either the journey, wireframe, or the actual design.
+
+- skill: Product Research
+  description: Complete cycle of product research experience from market, problem, and persona identification to product profitability.
+
+- skill: Data Analysis & Statistics
+  description: Understanding and long experience on data analysis & statistics particularly on spatial data to analyze and gain insights.
+
+- skill: DevOps & ERD Design
+  description: DevOps for PM to understand technical process better & ERD Design to create a more complete overview.
+
+- skill: Frontend Development
+  description: Self project frontend developments help to understand roadmap drafting.

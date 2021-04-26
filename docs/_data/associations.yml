@@ -1,8 +1,44 @@
 # Associations
 # comment out the urls if you do not wish to display them
 
-- organization: School Bar
-  role: Volunteer
-  year: 2001 &mdash; 2010
-  url: https://tihlde.org/
-  summary: The School bar is used by both engineers and other diciplines to socialize. Some responsibilities I had were to work behind the bar and checking IDs at the entrance.
+- organization: Study Club Communication Forum
+  role: Science and Technology Cluster Coordinator
+  year: 2015 &mdash; 2016
+  url: https://sccf.wg.ugm.ac.id/
+  #summary:
+
+- organization: Geography Study Club UGM
+  role: Chairman
+  year: 2014 &mdash; 2015
+  url: https://gsc.geo.ugm.ac.id/
+  #summary:
+
+- organization: Balairungklass UGM
+  role: Vice Chairman of External Affairs
+  year: 2014 &mdash; 2015
+  url: https://studn.id/community/detail/773
+  #summary:
+
+- organization: Gadjah Mada Mengajar UGM
+  role: Chief of Curriculum Division
+  year: 2013 &mdash; 2014
+  url: https://www.gudeg.net/direktori/3591/gadjah-mada-mengajar.html
+  #summary:
+
+- organization: Geo-Environment Student Challenge (GEOS)
+  role: Chief of Media and Technology
+  year: 2013 &mdash; 2014
+  url: https://gsc.geo.ugm.ac.id/gscgeos/
+  #summary:
+
+- organization: Community Entrepreneurship Academy UGM
+  role: Participant
+  year: 2018 &mdash; 2018
+  url: https://akmindonesia.org/
+  #summary:
+
+- organization: 2nd International Conference of Indonesian Society for Remote Sensing (ICOIRS)
+  role: Master of Ceremony
+  year: 2016 &mdash; 2016
+  url: https://mdkik.pasca.ugm.ac.id/event/the-2nd-international-conference-of-indonesian-society-for-remote-sensing-icoirs-2016-pit-mapin-xxi/
+  #summary:
