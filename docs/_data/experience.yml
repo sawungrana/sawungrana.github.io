@@ -1,25 +1,50 @@
 # Jobs
-# VP of Global Communications
-- company: Microchip
-  position: Application Engineer
-  duration: Aug, 2020 &mdash; Present
-  summary: Writing software both for microcontrollers in C and general backend development. 
- # summary: Writing software both for chips and sentences describing your position. If you held the position for a long time, it could be a longer section, including a couple bullet points	<ul class="resume-item-list"><li>A project you are proud of</li><li>Another awesome project</li><li>or a team or department you worked with</li></ul>
+- company: Bhumi Varta Technology
+  position: Product Manager
+  duration: Apr, 2020 &mdash; Present
+  summary: Managing Location Intelligence application including modules (logistics management, sales management, risk management, and several others), add-ons, mobile companion app, data panel, and super-admin panel. Some notable achievements are (1) we launched a main version in April 2021, (2) implement and customize agile methodologies to our team, and (3) implement strong and autonomous SDLC process. My main tasks are <ul class="resume-item-list"><li>1. Conducting client interviews & user testing</li><li>2. Performing design sprints</li><li>3. Project & feature development prioritization</li><li>4. Roadmap, resource, & cost planning</li><li>5. Running market assessments</li><li>6. Translating business-to-technical requirements, and vice versa</li><li>7. Pricing and revenue modeling</li><li></li>8. Defining and tracking success metrics</ul>
 
-# Director of Digital Stratgy
-- company: Capgemini
-  position: Data Scientist
-  duration:  Jan, 2019 &mdash; Aug, 2020
-  summary: Worked with a team that specializing in Computer Vision. One of my projects at a startup that used underwater cameras in fish farms was to try to create a program to monitor the health of the fish using Computer Vision.
+- company: Bhumi Varta Technology
+  position: Product Specialist
+  duration: Mar, 2019 &mdash; Apr, 2020
+  summary: <ul class="resume-item-list"><li>1. Managing LOKASI Intelligence development upon client request</li><li>2. Setting team pace and workload for each client request</li><li>3. Developing GIS enterprise analysis using open source sources</li><li>4. Setting up product strategy and market justification</li><li>5. Researching on new data acquirement methods</li></ul>
 
+- company: Badan Pusat Statistik
+  position: Data Specialist
+  duration: May, 2019
+  summary: The BPS mapping of 2019 is considered one of the most important job in BPS, Republic of Indonesia. The reason is the result would be the base of 10 years of BPS work and surveys. More importantly, it would be the base of 2020 Indonesian Census, involving 300 million+ people. My job is to create this map of a town in Central Java, Klaten.
 
-# Communications Coordinator
-- company: Making Waves
-  position: Data Scientist
-  duration:   Jul, 2017  &mdash; Dec, 2018
-  summary: Worked as a general developer and Data Scientist. Two of the projects including Machine Learning were a Norwegian Chatbot project in python and Proof of Concept testing Computer Vision in Elastic Search.
+- company: Nusadventure
+  position: Head of Product
+  duration: Feb, 2018  &mdash; May, 2019
+  summary: <ul class="resume-item-list"><li>1. Creating sustainability-based tourism products mainly for international tourists</li><li>2. Producing operational and promotional digital contents</li><li>3. Setting up product strategy and development</li></ul>
 
-- company: Kodeklubben Trondheim 
-  position: Instructor - Internship
-  duration:   Jun, 2016  &mdash; Jul, 2016
-  summary: Kodeklubben is a Norwegian initative to teach children coding. This internship was about teaching HTMl, CSS, JavaScript to people from junior high school and high school.
+- company: Coordinating Ministry of Economic Affairs of the Republic of Indonesia
+  position: Geospatial Data Analyst
+  duration: Mar, 2017  &mdash; Jan, 2018
+  summary: <ul class="resume-item-list"><li>1. Compiling thematic maps, mainly permission, strategic, and natural resources maps</li><li>2. Integrating thematic maps to Indonesian typographic map as the base</li><li>3. Synchronizing permission maps (mining permit, cultivation rights, location permission) with related regions and ministries</li></ul>
+
+- company: E Fun English Institute
+  position: Teacher
+  duration: Jan, 2016  &mdash; Jul, 2016
+  summary: Teaching about English for daily and business conversations for high school students and adults. I also taught written English for academic and general purposes. This experience allowed me to speak English more fluently as I spoke to native almost every day on that period. I also learned much how English should be taught.
+
+- company: Universitas Gadjah Mada
+  position: Remote Sensing for Geomorphology, Geology, and Soil Science Laboratory Assistant
+  duration: Jan, 2016  &mdash; Jun, 2016
+  summary: Taught about how remote sensing techniques and methods are applied in Geomorphology (the study of the physical features of the surface of the earth and their relation to its geological structures), Geology (the science that deals with the earth's physical structure and substance, its history, and the processes that act on it), and Soil Science (the branch of science concerned with the formation, nature, ecology, and classification of soils).
+
+- company: Universitas Gadjah Mada
+  position: Disaster Mapping Laboratory Assistant
+  duration: Jan, 2016  &mdash; Jun, 2016
+  summary: Taught about how disasters are be mapped using Geographic Information System (GIS) and remote sensing. Also, taught on how to represent wide of varieties of data such as vector and raster data for disaster management tools especially for frequent disaster in Indonesia.
+
+- company: Universitas Gadjah Mada
+  position: Remote Sensing of Non-Photographic System Laboratory Assistant
+  duration: Jan, 2016  &mdash; Jun, 2016
+  summary: Taught about non-visible light as the source for acquiring information of Earth's surface through remote sensing. Human eye can only see visible light with red, green, and blue band. Whereas in nature we have vast frequencies and length of electromagnetic waves which react in various responses with their own characteristics. I taught about how to utilize this non-visible wave in remote sensing.
+
+- company: Universitas Gadjah Mada
+  position: Photogrammetry Laboratory Assistant
+  duration: Jan, 2016  &mdash; Jun, 2016
+  summary: Taught about photogrammetry either with satellites, airborne or drones to be utilized as tools to extract physical data from distance, particularly for Digital Elevation Model (DEM). Photogrammetry is a great tool for engineering, especially geology and city planning as it can derive many information from far.

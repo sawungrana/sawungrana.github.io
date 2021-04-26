@@ -18,12 +18,12 @@ jobs:
       - name: Webpage to PDF
         uses: SetiZ/web_to_pdf_action@master
         with:
-          webPageURL: https://bjornamr.github.io/resume-template/
-          outputFile: webpage/resume.pdf
+          webPageURL: https://bjornamr.github.io/sawungrana.github.io
+          outputFile: docs/webpage/resume.pdf
           usePuppeteer: true
           pdfOptions: '{"format": "A4", "margin": {"left": "2cm", "top": "4cm", "right": "1cm", "bottom": "3.5cm"}}'
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Generate PDF
           branch: gh-pages
-          file_pattern: webpage/resume.pdf
+          file_pattern: docs/webpage/resume.pdf
