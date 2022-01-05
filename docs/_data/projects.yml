@@ -3,7 +3,7 @@
 
 # Spatialmate
 - project: Spatialmate.com
-  role: Administrator
+  role: Administrator & Developer
   duration: Dec, 2019 &mdash; Present
   url: "https://www.spatialmate.com"
   description: Spatialmate is a sharing platform for geospatial data and lessons for earth science fields.
@@ -20,8 +20,8 @@
   # url: "#"
   description: Customizing ERPNext to provide affordable ERP system for small enterprises of Indonesia.
 
-- project: Laguna Data
+- project: Where
   role: Product and UI/UX Designer
   duration: Apr, 2021 &mdash; Present
   # url: "#"
-  description: Laguna Data is a marketplace of data. Would be launched in August 2021.
+  description: Where, is our team product to create a bridge for community to gather. It essentially is a map-based social media platform.
