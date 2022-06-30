@@ -1,6 +1,6 @@
 # Site settings
 title: "Azza's Resume"
-description: "Product manager and UX researcher"
+description: "Group Product Manager"
 
 # Build settings
 markdown: kramdown
@@ -46,7 +46,7 @@ resume_section_interests: true
 # uncomment the options you wish to display, and add your own URL
 resume_social_links:
   resume_github_url: "https://github.com/sawungrana"
-  #resume_twitter_url:           "http://twitter.com/jglovier"
+  resume_twitter_url:           "http://twitter.com/sawungrana"
   #resume_dribbble_url:          "https://dribbble.com/jag"
   # resume_facebook_url:          "insert Facebook URL here"
   resume_linkedin_url: "https://www.linkedin.com/in/sawungrana"
