@@ -1,6 +1,6 @@
 # Site settings
-title: "Azza's Resume"
-description: "Group Product Manager"
+title: "Azzadiva Sawungrana's Resume"
+description: "Lead Product Manager"
 
 # Build settings
 markdown: kramdown
@@ -10,26 +10,26 @@ sass:
 
 # Resume settings
 resume_avatar: "true"
-resume_name: "Azzadiva Ravi Sawungrana"
+resume_name: "Azzadiva Sawungrana"
 resume_title: "Lead Product Manager"
 
 # used for the contact button in _layouts/resume.html
 resume_contact_email: "azzadv@outlook.com"
 
 # the next two items are used for schema itemprops in _layouts/resume.html
-#resume_contact_telephone:       "555-7334"
-resume_contact_address: "Ki Ageng Gribig St. 2A/21, Klaten, Central Java, ID"
+resume_contact_telephone: "62 857 2915 3205"
+resume_contact_address: "Dorus Rijkersplein 18, 2518 DA Den Haag, Netherlands"
 
 #resume_header_contact_info:     "742 Evergreen Terrace, Springfield • 555-7334 • lisasimpson@youremailaddress.com"
 display_header_contact_info: "true"
 
-resume_header_intro: "<p>A group product manager with 4.5 years (total) worth of experience, mostly in Enterprise SaaS of GIS and location intelligence systems, managing three platforms. Highly skilled in identifying problems and opportunities to then be transformed into solutions and features. Driven and strategic with a proven history of market identification, roadmap development, and product optimization.</p>"
+resume_header_intro: "<p>As a lead product manager with over five years of experience in the B2B SaaS industry, I specialize in GIS and location intelligence systems, with a focus on the retail, F&B, and FMCG markets. My ability to identify problems and opportunities, and transform them into solutions and features, has proven to be a valuable asset in helping my clients reduce cost, risk, and improve income through geospatial analysis. I am skilled in market identification, roadmap development, and product optimization, and am known for my strategic and driven approach to work. To learn more about my background and skills, please visit my online resume at sawungrana.github.io. In addition to my expertise in product management and map technology, I am also an avid writer and have published articles on a variety of topics, including UX and RS-GIS awareness, on my blog at sawungrana.medium.com and spatialmate.com.</p>"
 
 # use "yes" to display the email contact button,
 # "no" to display an "I'm not looking for work" message,
 # or remove the resume_looking_for_work option entirely
 # to leave blank
-resume_looking_for_work: ""
+resume_looking_for_work: "yes"
 
 # Decide which sections to use
 # comment out to hide
