@@ -10,18 +10,12 @@
 
 - project: GISt
   role: UI/UX Designer & Frontend Developer
-  duration: Mar, 2021 &mdash; Present
+  duration: Mar, 2021 &mdash; May, 2022
   # url: "#"
   description: GISt is an easy & quick geospatial software for non-experts. Using reactJS, electronJS, and keplerGL as the main core.
 
 - project: ERPNext (Customized)
   role: Developer
-  duration: Dec, 2020 &mdash; Present
+  duration: Dec, 2020 &mdash; Jan, 2021
   # url: "#"
   description: Customizing ERPNext to provide affordable ERP system for small enterprises of Indonesia.
-
-- project: Where
-  role: Product and UI/UX Designer
-  duration: Apr, 2021 &mdash; Present
-  # url: "#"
-  description: Where, is our team product to create a bridge for community to gather. It essentially is a map-based social media platform.
