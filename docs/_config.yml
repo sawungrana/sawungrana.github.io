@@ -1,6 +1,6 @@
 # Site settings
 title: "Azzadiva Sawungrana's Resume"
-description: "Lead Product Manager"
+description: "Student at University of Twente"
 
 # Build settings
 markdown: kramdown
@@ -17,13 +17,13 @@ resume_title: "Lead Product Manager"
 resume_contact_email: "azzadv@outlook.com"
 
 # the next two items are used for schema itemprops in _layouts/resume.html
-resume_contact_telephone: "62 857 2915 3205"
-resume_contact_address: "Dorus Rijkersplein 18, 2518 DA Den Haag, Netherlands"
+resume_contact_telephone: "31 630 5975 20"
+resume_contact_address: "Boulevard 1945 4 7511AE Enschede"
 
 #resume_header_contact_info:     "742 Evergreen Terrace, Springfield • 555-7334 • lisasimpson@youremailaddress.com"
 display_header_contact_info: "true"
 
-resume_header_intro: "<p>As a lead product manager with over five years of experience in the B2B SaaS industry, I specialize in GIS and location intelligence systems, with a focus on the retail, F&B, and FMCG markets. My ability to identify problems and opportunities, and transform them into solutions and features, has proven to be a valuable asset in helping my clients reduce cost, risk, and improve income through geospatial analysis. I am skilled in market identification, roadmap development, and product optimization, and am known for my strategic and driven approach to work. To learn more about my background and skills, please visit my online resume at sawungrana.github.io. In addition to my expertise in product management and map technology, I am also an avid writer and have published articles on a variety of topics, including UX and RS-GIS awareness, on my blog at sawungrana.medium.com and spatialmate.com.</p>"
+resume_header_intro: "<p>Dynamic and forward-thinking Spatial Engineering student at the University of Twente, previously holding over six years of professional experience in the B2B SaaS industry, specializing in GIS and location intelligence systems. With a robust background in product management, I've effectively served clients in the retail, F&B, and FMCG sectors, leveraging geospatial analysis to enhance income, reduce costs, and mitigate risks. My current academic focus in Spatial Engineering stems from a deep-seated desire to bridge the gap between geospatial experts and the general public. Recognizing the need for professionals who not only wield technical expertise but also understand the real-world applications of their tools, I am dedicated to transforming technical solutions into tangible benefits for society.</p>"
 
 # use "yes" to display the email contact button,
 # "no" to display an "I'm not looking for work" message,
