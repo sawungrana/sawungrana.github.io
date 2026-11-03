@@ -12,7 +12,7 @@ download. It answers "should we hire him". `lantip.space` answers "does he
 still build".
 
 Everything here is static. No database, no analytics, no cookies, no
-newsletter.
+newsletter, no JavaScript.
 
 ## 2. Decisions (locked)
 
@@ -24,71 +24,77 @@ newsletter.
 | Domain | **none by choice.** Served at `sawungrana.github.io`. `sawungrana.pw` retired. Adding a domain later = one CNAME file |
 | Relationship to lantip.space | Siblings. Shared design language, cross-linked, separate repos, no shared package |
 | Analytics | none |
-| Portrait | cameo (circular, double hairline) on screen and on the designed PDF; never on the ATS PDF |
+| Portrait | cameo (circular, double hairline) on screen, the designed PDF and the OG card; never on the ATS PDF |
 | CV output | two PDFs from one source: `cv.pdf` (designed) and `cv-plain.pdf` (ATS-safe) |
 
 ## 3. Routes
 
-| Route | Status | Job |
-|---|---|---|
-| `/` | built | Name, positioning, portrait, elsewhere links |
-| `/cv` | phase 1 | Full CV, screen layout |
-| `/cv/print` | phase 2 | Hidden route; the PDF source |
-| `/work` | phase 3 | Three deep plates with architecture detail |
-| `/colophon` | phase 3 | How the site is made |
-
-The nav grows as routes land. No link points at a page that does not exist.
+| Route | Job |
+|---|---|
+| `/` | Name, positioning, portrait, elsewhere links |
+| `/cv` | Full CV, screen layout |
+| `/cv/print` | Print source for the designed PDF. `noindex` |
+| `/cv/plain` | Print source for the ATS PDF. `noindex` |
+| `/work` | Three deep plates with numbers and a pipeline diagram |
+| `/colophon` | How the site is made |
+| `/sitemap.xml` | Generated from a route list, excludes the print routes |
+| `/og` | The 1200×630 social card source, screenshotted to `public/og.png`. `noindex` |
 
 ## 4. Design system
 
 Ported from `website-3`: the `@theme` token block, the paper noise texture,
 `.plate-frame`, `.stamp-text`, `.scrim-fade`, the header-band and rosette
-ornaments. New here: `.cameo` (portrait medallion) and a replacement
-`divider.svg` — the lantip wave is 1200 units wide and renders sub-pixel at the
-128 px rule width, so this site uses a 48 × 16 lozenge instead.
+ornaments. New here: `.cameo` (portrait medallion), a replacement
+`divider.svg`, and `.ats` for the plain CV.
 
-Two deliberate differences from lantip:
+Three deliberate differences from lantip:
 
-- **The accent colour has one job: dates and links.** On lantip terracotta is
-  decorative. On a CV, anything coloured is a signal, so spend it once.
+- **The accent colour has one job: dates, links and list markers.** On lantip
+  terracotta is decorative. On a CV, anything coloured is a signal, so spend it
+  once.
 - **A scan band at the top of `/cv`.** Name, role, location, four numbers. HR
   reads a CV in about six seconds before deciding to read it properly.
+- **A new divider.** The lantip wave is 1200 units wide with a 0.7 unit stroke;
+  scaled into a 128 px rule it lands at 0.075 CSS px and disappears. This site
+  uses a 48 × 16 lozenge drawn at the size it is displayed.
 
 ## 5. CV pipeline
 
 ```
 src/data/cv.yaml ──┬──> /cv            web CV
                    ├──> cv.pdf         designed, paper, cameo
-                   ├──> cv-plain.pdf   A4, white, single column, no photo
-                   └──> cv.json        anything else later
+                   └──> cv-plain.pdf   A4, white, single column, no photo
 ```
 
-- One YAML file, validated by a Zod schema at build time. A malformed date or a
-  missing field fails the build rather than shipping a broken CV.
-- `npm run cv` renders `/cv/print` and writes both PDFs.
-- The PDFs are committed, because HR links should not depend on a build.
+- One YAML file, validated by a Zod schema in `src/lib/cv.ts` at build time. A
+  malformed date or a missing field fails the build with the field path.
+- Quote any YAML string containing a colon, a leading dash, or a bare year.
+  Unquoted, `Lead the data function: platform` becomes a mapping.
+- `npm run render` builds the site, serves `dist/`, and drives a headless
+  Chromium to print both PDFs and the OG card. No PDF library is involved, so
+  the PDFs cannot drift from the pages.
+- The generated files are committed to `public/`, because an HR link should not
+  depend on a build.
 
-Content rules:
-
-- Cut at 2017. Nine years, seven blocks. Older roles go in an "earlier" section
-  on the web CV only.
-- The plain PDF carries no colour, no photo, no rules, and real selectable text.
+Pagination notes: A4 is 762 CSS px, which is below Tailwind's 768 px `md`
+breakpoint, so the CV grids use `sm:` and the print route sets its own root
+font size. Without both, the date rail collapses in the PDF and the CV grows a
+fourth page.
 
 ## 6. Phases
 
 - [x] **Phase 0** — archive the Jekyll site and the W3 template, scaffold Astro,
       port tokens and ornaments, build the home page, add the Pages workflow
-- [ ] **Phase 1** — `cv.yaml`, Zod schema, `/cv`
-- [ ] **Phase 2** — `/cv/print`, both PDFs, `npm run cv`
-- [ ] **Phase 3** — `/work` (three deep plates), `/colophon`, nav
-- [ ] **Phase 4** — OG images, JSON-LD `Person`, cross-links, sitemap
+- [x] **Phase 1** — `cv.yaml`, Zod schema, `/cv`
+- [x] **Phase 2** — `/cv/print`, `/cv/plain`, both PDFs, `npm run render`
+- [x] **Phase 3** — `/work` (three deep plates), `/colophon`, nav
+- [x] **Phase 4** — OG card, JSON-LD `Person`, sitemap, robots, cross-links
 
 ## 7. Open items
 
 - Confirm `azzadv@outlook.com` is still the address that should be public.
-- `/work` plates: Bank Tanah (one platform, three clients, third phase), RIUH
-  (dasymetric framework plus the meso traffic relocation), and the serving
-  migration (GEE → COG/PMTiles/Parquet, $23 per national dataset, bus factor
-  2 → 5).
-- Decide whether the designed PDF keeps the paper tint when printed on paper,
-  or flips to white. Previewing one print on an office printer will settle it.
+- Preview one printed sheet on a real printer: decide whether the designed PDF
+  keeps the paper tint or flips to white for physical printing.
+- `cv.pdf` is ~850 KB because the paper texture rasterises on each page. Fine
+  for email; worth revisiting if it ever needs to be smaller.
+- Consider a `cv.json` output for reuse beyond the site.

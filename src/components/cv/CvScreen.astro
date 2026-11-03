@@ -1,0 +1,224 @@
+---
+import { cv } from "../../lib/cv";
+
+interface Props {
+  dense?: boolean;
+}
+
+const { dense = false } = Astro.props;
+
+const gap = dense ? "space-y-5" : "space-y-7";
+const entryGap = dense ? "space-y-5" : "space-y-8";
+const bodyText = dense ? "text-[0.95rem] leading-[1.5]" : "text-[1rem] leading-[1.6]";
+
+---
+
+<article class:list={["mx-auto max-w-4xl px-6", dense ? "py-6" : "py-10 md:py-14"]}>
+  <!-- scan band: what a reader needs before deciding to read -->
+  <header>
+    <p class="stamp-text text-ink-soft">{cv.person.location}</p>
+    <h1
+      class:list={[
+        "mt-2 leading-[1.08] text-ink-deep",
+        dense ? "text-[1.9rem]" : "text-[2.1rem] md:text-[2.7rem]",
+      ]}
+    >
+      {cv.person.displayName}
+    </h1>
+    <p class:list={["mt-2 text-ink-deep", dense ? "text-[1rem]" : "text-[1.15rem]"]}>
+      {cv.person.headline}
+    </p>
+    <p class:list={["mt-3 max-w-2xl text-ink", dense ? "text-[0.95rem]" : "text-[1.05rem]"]}>
+      {cv.person.positioning}
+    </p>
+
+    <ul
+      class:list={[
+        "mt-6 grid grid-cols-2 gap-x-6 gap-y-3 border-y rule-line sm:grid-cols-4",
+        dense ? "py-3" : "py-4",
+      ]}
+    >
+      {
+        cv.facts.map((f) => (
+          <li>
+            <span class="block text-[1.45rem] leading-none text-ink-deep">{f.value}</span>
+            <span class="stamp-text mt-1.5 block text-ink-soft">{f.label}</span>
+          </li>
+        ))
+      }
+    </ul>
+
+    <ul class="stamp-text mt-4 flex flex-wrap gap-x-5 gap-y-2">
+      <li><a href={`mailto:${cv.person.email}`} class="no-underline">{cv.person.email}</a></li>
+      {
+        cv.person.links.map((l) => (
+          <li>
+            <a href={l.href} class="no-underline">
+              {l.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </header>
+
+  <div class:list={[dense ? "mt-8" : "mt-10", gap]}>
+    <!-- profile -->
+    <section aria-labelledby="cv-profile">
+      <h2 id="cv-profile" class="stamp-text border-b rule-line pb-2 text-ink-soft">Profile</h2>
+      <div class:list={["mt-4 max-w-3xl", gap]}>
+        {cv.person.summary.map((p) => <p class={bodyText}>{p}</p>)}
+      </div>
+    </section>
+
+    <!-- experience -->
+    <section aria-labelledby="cv-experience">
+      <h2 id="cv-experience" class="stamp-text border-b rule-line pb-2 text-ink-soft">Experience</h2>
+      <div class:list={["mt-5", entryGap]}>
+        {
+          cv.experience.map((entry) => (
+            <div class="cv-entry grid gap-1 sm:grid-cols-[8rem_1fr] sm:gap-6">
+              <div class="stamp-text pt-1 text-ink-soft">
+                <div>{entry.start}</div>
+                <div class="mt-0.5">{entry.end}</div>
+              </div>
+              <div>
+                <h3 class="text-[1.12rem] leading-snug text-ink-deep">{entry.role}</h3>
+                <p class="text-ink">
+                  {entry.company}
+                  {entry.location && (
+                    <>
+                      <span class="text-ink-soft"> · </span>
+                      <span class="text-ink-soft">{entry.location}</span>
+                    </>
+                  )}
+                </p>
+                {entry.note && (
+                  <p class="mt-1 text-[0.9rem] italic text-ink-soft">{entry.note}</p>
+                )}
+                {entry.summary && <p class:list={["mt-2", bodyText]}>{entry.summary}</p>}
+                {entry.bullets.length > 0 && (
+                  <ul
+                    class:list={[
+                      "mt-2 list-disc pl-5 marker:text-accent/60",
+                      bodyText,
+                      "space-y-1.5",
+                    ]}
+                  >
+                    {entry.bullets.map((b) => (
+                      <li>{b}</li>
+                    ))}
+                  </ul>
+                )}
+                {entry.tags.length > 0 && (
+                  <p class="stamp-text mt-2 text-ink-soft/80">{entry.tags.join(" · ")}</p>
+                )}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- education -->
+    <section aria-labelledby="cv-education">
+      <h2 id="cv-education" class="stamp-text border-b rule-line pb-2 text-ink-soft">Education</h2>
+      <div class:list={["mt-5", entryGap]}>
+        {
+          cv.education.map((entry) => (
+            <div class="cv-entry grid gap-1 sm:grid-cols-[8rem_1fr] sm:gap-6">
+              <div class="stamp-text pt-1 text-ink-soft">
+                <div>{entry.start}</div>
+                <div class="mt-0.5">{entry.end}</div>
+              </div>
+              <div>
+                <h3 class="text-[1.12rem] leading-snug text-ink-deep">{entry.role}</h3>
+                <p class="text-ink">
+                  {entry.company}
+                  {entry.location && (
+                    <>
+                      <span class="text-ink-soft"> · </span>
+                      <span class="text-ink-soft">{entry.location}</span>
+                    </>
+                  )}
+                </p>
+                {entry.summary && <p class:list={["mt-2", bodyText]}>{entry.summary}</p>}
+                {entry.bullets.length > 0 && (
+                  <ul
+                    class:list={[
+                      "mt-2 list-disc pl-5 marker:text-accent/60",
+                      bodyText,
+                      "space-y-1.5",
+                    ]}
+                  >
+                    {entry.bullets.map((b) => (
+                      <li>{b}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- publications -->
+    <section aria-labelledby="cv-publications">
+      <h2 id="cv-publications" class="stamp-text border-b rule-line pb-2 text-ink-soft">
+        Publications
+      </h2>
+      <ul class:list={["mt-5", bodyText, "space-y-4"]}>
+        {
+          cv.publications.map((p) => (
+            <li class="cv-entry">
+              <p class="text-ink-deep">{p.title}</p>
+              <p class="text-ink-soft">
+                {p.venue} · {p.status}
+              </p>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <!-- skills -->
+    <section aria-labelledby="cv-skills">
+      <h2 id="cv-skills" class="stamp-text border-b rule-line pb-2 text-ink-soft">Skills</h2>
+      <dl class:list={["mt-5 grid gap-4 sm:grid-cols-2", bodyText]}>
+        {
+          cv.skills.map((s) => (
+            <div class="cv-entry">
+              <dt class="stamp-text text-ink-soft">{s.group}</dt>
+              <dd class="mt-1 text-ink">{s.items.join(", ")}</dd>
+            </div>
+          ))
+        }
+      </dl>
+      <p class:list={["mt-4", bodyText, "text-ink-soft"]}>
+        <span class="stamp-text">Languages </span>
+        {cv.languages.map((l) => `${l.name} (${l.level})`).join(" · ")}
+      </p>
+    </section>
+
+    <!-- earlier, web only -->
+    {
+      !dense && (
+        <section aria-labelledby="cv-earlier">
+          <h2 id="cv-earlier" class="stamp-text border-b rule-line pb-2 text-ink-soft">
+            Earlier
+          </h2>
+          <ul class="mt-4 space-y-1.5 text-[0.95rem] text-ink-soft">
+            {cv.earlier.map((e) => (
+              <li class="flex flex-wrap gap-x-2">
+                <span class="text-ink">{e.role}</span>
+                <span>, {e.org}</span>
+                <span>· {e.period}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+  </div>
+</article>

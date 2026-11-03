@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /cv/print/
+Disallow: /cv/plain/
+Disallow: /og/
+
+Sitemap: https://sawungrana.github.io/sitemap.xml

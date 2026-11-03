@@ -1,0 +1,142 @@
+---
+import Base from "../../layouts/Base.astro";
+import Rule from "../../components/Rule.astro";
+import Stamp from "../../components/Stamp.astro";
+import headerBand from "../../ornaments/header-band.svg?raw";
+
+const plates = [
+  {
+    numeral: "Plate I",
+    title: "One platform, three agencies",
+    lede: "The same platform, sold to a second and third client instead of rebuilt.",
+    body: [
+      "A national land agency needed its teams to make data-informed decisions on land availability, legal status and utilisation. We built the platform once. When a mining company and then a sovereign fund needed something adjacent, the answer was configuration, not a new codebase: the same spatial identity, the same catalogue, the same delivery surface, with their data and their analysis on top.",
+      "The first client is now on its third phase. That is the number I care about most, because a renewal is harder to fake than a new logo.",
+    ],
+    facts: [
+      { value: "3", label: "clients on one platform" },
+      { value: "3", label: "phases with the first" },
+      { value: "1 mo", label: "to first delivery" },
+      { value: "2", label: "engineers, one data lead" },
+    ],
+  },
+  {
+    numeral: "Plate II",
+    title: "Population where it actually lives",
+    lede: "A dasymetric framework that puts age cohorts on a 50 m grid using open data only.",
+    body: [
+      "Village totals are the wrong unit for exposure. RIUH redistributes population onto a 50 m grid across five generational cohorts, using distance-decay accessibility surfaces, open POIs and modelled building density, and preserves the official village totals exactly.",
+      "The method is multi-algorithmic, and building density dominates feature importance. Ridge regression reaches an R² of 0.94 for Gen Z and 0.92 for Gen Alpha. Everything is reproducible and built from open data, which matters in places where the commercial alternative is a licence nobody can afford.",
+      "The same surface is now being pushed toward meso-scale traffic simulation, because buying traffic data in Indonesia is both expensive and unscalable.",
+    ],
+    facts: [
+      { value: "50 m", label: "cell size" },
+      { value: "5", label: "age cohorts" },
+      { value: "0.94", label: "R², Gen Z" },
+      { value: "100%", label: "open data" },
+    ],
+  },
+  {
+    numeral: "Plate III",
+    title: "The bill and the bus factor",
+    lede: "Precompute once, serve cheaply, and make sure more than two people can run it.",
+    body: [
+      "On-demand compute is the right tool for exploration and the wrong tool for serving a layer that never changes. Moving the serving path to batch precomputation, with Cloud Optimised GeoTIFF, GeoParquet and PMTiles behind a thin tile server, cut total infrastructure cost by 32% and made analysis roughly four times faster.",
+      "The cost curve is the argument. Serving every national dataset now costs about $23 a month, and the eleventh client on the same data costs about $20 more than the first. One client pays for the map; the rest are nearly free.",
+      "I also care that the pipeline survives me. When I started, two people could run it end to end. It is five now, and that is the change I would defend hardest.",
+    ],
+    facts: [
+      { value: "-32%", label: "total infrastructure" },
+      { value: "$23", label: "per national dataset" },
+      { value: "4x", label: "faster analysis" },
+      { value: "2 to 5", label: "people who can run it" },
+    ],
+    note: "Infrastructure is reviewed in aggregate. Per-deal margin is not tracked, and I would rather say so than invent a number.",
+  },
+];
+
+const pipeline = [
+  { step: "01", title: "Sources", note: "open, licensed, partner and uploaded data" },
+  { step: "02", title: "Batch precompute", note: "validate, harmonise, calculate once" },
+  { step: "03", title: "Static store", note: "COG, GeoParquet, PMTiles" },
+  { step: "04", title: "Thin server", note: "tiles and reads, no recomputation" },
+  { step: "05", title: "Client", note: "map, report, export or API" },
+];
+---
+<Base
+  title="Work — Azzadiva Sawungrana"
+  description="Three pieces of work: a platform resold to three agencies, a dasymetric population framework, and the migration that cut infrastructure cost by a third."
+>
+  <div class="ornament w-full text-ink/30" aria-hidden="true" set:html={headerBand}></div>
+
+  <div class="mx-auto max-w-4xl px-6">
+    <header class="mt-8 md:mt-12">
+      <p class="stamp-text text-ink-soft">selected work</p>
+      <h1 class="mt-3 max-w-2xl text-[2rem] leading-[1.12] text-ink-deep md:text-[2.5rem]">
+        Three things worth explaining properly.
+      </h1>
+      <p class="mt-5 max-w-2xl text-[1.08rem]">
+        Not a portfolio. Three projects where the decision was interesting, the number is checkable,
+        and the thing I would do differently is easy to name.
+      </p>
+    </header>
+
+    <Rule />
+
+    <div class="space-y-16 pb-4">
+      {
+        plates.map((plate) => (
+          <section class="grid gap-5 md:grid-cols-[7rem_1fr] md:gap-8">
+            <div class="pt-1">
+              <Stamp label={plate.numeral} />
+            </div>
+            <div>
+              <h2 class="text-[1.45rem] leading-snug text-ink-deep md:text-[1.6rem]">
+                {plate.title}
+              </h2>
+              <p class="mt-2 text-[1.05rem] text-ink">{plate.lede}</p>
+
+              <div class="mt-4 max-w-2xl space-y-3">
+                {plate.body.map((p) => (
+                  <p class="text-[0.98rem]">{p}</p>
+                ))}
+              </div>
+
+              <dl class="mt-6 grid grid-cols-2 gap-x-6 gap-y-4 border-y rule-line py-4 sm:grid-cols-4">
+                {plate.facts.map((f) => (
+                  <div class="flex flex-col-reverse">
+                    <dt class="stamp-text mt-1.5 text-ink-soft">{f.label}</dt>
+                    <dd class="text-[1.35rem] leading-none text-ink-deep">{f.value}</dd>
+                  </div>
+                ))}
+              </dl>
+
+              {plate.note && (
+                <p class="mt-3 text-[0.88rem] italic text-ink-soft">{plate.note}</p>
+              )}
+
+              {plate.numeral === "Plate III" && (
+                <ol class="mt-8 grid gap-2 sm:grid-cols-5" aria-label="serving pipeline">
+                  {pipeline.map((s) => (
+                    <li class="plate-frame bg-paper-deep/40 px-3 py-3">
+                      <p class="stamp-text text-accent">{s.step}</p>
+                      <p class="mt-1 text-[0.92rem] leading-tight text-ink-deep">{s.title}</p>
+                      <p class="mt-1 text-[0.8rem] leading-snug text-ink-soft">{s.note}</p>
+                    </li>
+                  ))}
+                </ol>
+              )}
+            </div>
+          </section>
+        ))
+      }
+    </div>
+
+    <Rule />
+
+    <p class="max-w-2xl pb-10 text-[0.92rem] text-ink-soft">
+      Client names are left out where agreements ask for it, and contract values are not published.
+      Happy to go into detail in a conversation.
+    </p>
+  </div>
+</Base>

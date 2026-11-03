@@ -1,0 +1,104 @@
+---
+import { cv } from "../../lib/cv";
+
+/**
+ * The ATS variant. No colour, no rules, no photo, no columns, no tags, and
+ * standard section headings. It exists so the designed CV never has to be the
+ * one a parser has to read.
+ */
+const period = (start: string, end: string) => `${start} - ${end}`;
+---
+<article class="ats">
+  <header>
+    <h1>{cv.person.name}</h1>
+    <p>{cv.person.headline}</p>
+    <p>{cv.person.location}</p>
+    <p>
+      {cv.person.email} · {cv.person.links.map((l) => l.href).join(" · ")}
+    </p>
+  </header>
+
+  <section>
+    <h2>Professional Summary</h2>
+    {cv.person.summary.map((p) => <p>{p}</p>)}
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+    {
+      cv.experience.map((entry) => (
+        <div class="entry">
+          <h3>{entry.role}</h3>
+          <p class="meta">
+            {entry.company}
+            {entry.location ? `, ${entry.location}` : ""} — {period(entry.start, entry.end)}
+          </p>
+          {entry.summary && <p>{entry.summary}</p>}
+          {entry.bullets.length > 0 && (
+            <ul>
+              {entry.bullets.map((b) => (
+                <li>{b}</li>
+              ))}
+            </ul>
+          )}
+        </div>
+      ))
+    }
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    {
+      cv.education.map((entry) => (
+        <div class="entry">
+          <h3>{entry.role}</h3>
+          <p class="meta">
+            {entry.company}
+            {entry.location ? `, ${entry.location}` : ""} — {period(entry.start, entry.end)}
+          </p>
+          {entry.summary && <p>{entry.summary}</p>}
+          {entry.bullets.length > 0 && (
+            <ul>
+              {entry.bullets.map((b) => (
+                <li>{b}</li>
+              ))}
+            </ul>
+          )}
+        </div>
+      ))
+    }
+  </section>
+
+  <section>
+    <h2>Publications</h2>
+    <ul>
+      {
+        cv.publications.map((p) => (
+          <li>
+            {p.title}. {p.venue}. {p.status}.
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <ul>
+      {
+        cv.skills.map((s) => (
+          <li>
+            <strong>{s.group}:</strong> {s.items.join(", ")}
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section>
+    <h2>Languages</h2>
+    <ul>
+      {cv.languages.map((l) => <li>{l.name} — {l.level}</li>)}
+    </ul>
+  </section>
+</article>

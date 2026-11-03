@@ -1,0 +1,21 @@
+---
+import Base from "../../layouts/Base.astro";
+import CvScreen from "../../components/cv/CvScreen.astro";
+import { cv } from "../../lib/cv";
+
+const title = `CV — ${cv.person.displayName}`;
+const description = `${cv.person.displayName}, ${cv.person.headline}. ${cv.person.positioning}`;
+---
+<Base title={title} description={description}>
+  <div class="no-print mx-auto max-w-4xl px-6 pt-8">
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <p class="stamp-text text-ink-soft">curriculum vitae · updated November 2026</p>
+      <div class="flex flex-wrap gap-x-5 gap-y-2">
+        <a href="/cv.pdf" class="stamp-text no-underline">pdf · designed</a>
+        <a href="/cv-plain.pdf" class="stamp-text no-underline">pdf · plain</a>
+      </div>
+    </div>
+  </div>
+
+  <CvScreen />
+</Base>

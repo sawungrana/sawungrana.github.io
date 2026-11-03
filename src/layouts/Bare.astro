@@ -1,0 +1,24 @@
+---
+import "@fontsource-variable/eb-garamond";
+import "@fontsource/fragment-mono/400.css";
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  plain?: boolean;
+}
+
+const { title, plain = false } = Astro.props;
+---
+<!doctype html>
+<html lang="en" class:list={[plain && "print-plain"]}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen">
+    <slot />
+  </body>
+</html>

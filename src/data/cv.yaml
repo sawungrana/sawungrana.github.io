@@ -1,0 +1,216 @@
+# The single source of truth for the CV.
+# Everything on /cv, /cv/print, /cv/plain, cv.pdf and cv-plain.pdf is generated
+# from this file, and validated by src/lib/cv.ts at build time.
+#
+# House rule: quote any string that contains a colon, a leading dash, or a bare
+# year. Unquoted, "Lead the data function: platform" becomes a YAML mapping and
+# the build fails.
+
+person:
+  name: Azzadiva Ravi Sawungrana
+  displayName: Azzadiva Sawungrana
+  headline: Head of Data at Geosquare
+  positioning: I build geospatial data platforms, and I turn bespoke delivery into products that sell twice.
+  location: Klaten, Indonesia
+  email: azzadv@outlook.com
+  links:
+    - label: lantip.space
+      href: https://lantip.space
+    - label: github
+      href: https://github.com/sawungrana
+    - label: linkedin
+      href: https://www.linkedin.com/in/sawungrana
+    - label: scholar
+      href: https://scholar.google.com/citations?user=wjm9qZMAAAAJ
+  summary:
+    - >-
+      Head of Data at Geosquare, where national datasets become location
+      intelligence for land, hazard, property and mobility decisions. I own the
+      platform architecture, the standards the team works to, and what it costs
+      to run.
+    - >-
+      I have led the move from bespoke delivery to repeatable product twice, at
+      Bhumi Varta and at Geosquare, and I am building a third attempt now. My
+      work sits where data engineering meets product judgement. I care about the
+      cost of serving the second client, not only the quality of the first map.
+
+facts:
+  - value: "9 yrs"
+    label: geospatial data
+  - value: "-32%"
+    label: infrastructure cost
+  - value: "$23"
+    label: national dataset served
+  - value: "4"
+    label: people led
+
+experience:
+  - company: Geosquare
+    role: Head of Data
+    start: Aug 2025
+    end: Present
+    location: Jakarta, Indonesia (remote)
+    note: Founding team since 2023, when the company was Petain. Head of Geospatial part-time 2024-25, full-time from August 2025.
+    summary: A location intelligence company building grid-based data products for land, property, risk and network decisions.
+    bullets:
+      - "Lead the data function: platform architecture, engineering standards, the team, and what it costs to run."
+      - "Took a platform built for one national land agency and sold it to two more clients, with a third in discussion. The first client is now on its third phase."
+      - "Cut total cloud spend by 32%. Serving every national dataset now costs about $23 a month, and the marginal cost of the eleventh client on the same data is about $20."
+      - "Moved the bus factor from 2 people who could run the pipeline end to end to 5."
+      - "Wrote the platform and portfolio strategy: six reusable engines, six product lines, and the sequence for getting from one to the other."
+      - "Building KYL, a recurring product priced by the area a client needs."
+    tags:
+      - Python
+      - DuckDB
+      - GeoParquet
+      - PMTiles
+      - cloud cost
+      - platform strategy
+
+  - company: Van Lanschot Kempen
+    role: Geospatial Analyst
+    start: May 2025
+    end: Jul 2025
+    location: Amsterdam, Netherlands
+    summary: Internship with the SDG Farmland Fund, on how a global farmland portfolio reports on sustainability and climate risk.
+    bullets:
+      - "Evaluated the fund's existing data systems and defined the use cases worth building first."
+      - "Wrote the conceptual design for geospatial analysis, visualisation and reporting across the portfolio."
+    tags:
+      - spatial finance
+      - climate risk
+      - farmland
+
+  - company: Bhumi Varta Technology
+    role: Lead Product Manager
+    start: Apr 2020
+    end: Feb 2023
+    location: Tangerang, Indonesia
+    summary: LOKASI Intelligence, a location intelligence platform used by Indonesian banks, retailers and FMCG companies to decide where to expand and how to run their networks.
+    bullets:
+      - "Shipped version 2 in April 2021, a full redesign and refactor of the v1 codebase."
+      - "Led LOKASI Intelligence Enterprise and turned client-specific deployments into modular capability inside the main product, instead of one-off forks."
+      - "Ran the product team for most of this period with no CPO above it, so strategy, roadmap and prioritisation were mine."
+      - "Built the delivery process for a small team: requirement gathering, PRD standards, agile, and a DevOps setup that worked without a dedicated ops person."
+    tags:
+      - product strategy
+      - roadmapping
+      - SDLC
+      - refactor
+
+  - company: Bhumi Varta Technology
+    role: Product Consultant
+    start: Feb 2023
+    end: Jun 2023
+    location: Remote
+    summary: Handover role before moving to the Netherlands.
+    bullets: []
+
+  - company: Nusadventure
+    role: Founder and Head of Product
+    start: Feb 2018
+    end: May 2019
+    location: Klaten, Indonesia
+    summary: A sustainable tourism venture built with Desa Wisata Jarum.
+    bullets:
+      - "Built and ran the product, operations and content side."
+      - "Closed it after two years when conversion could not support the team."
+
+  - company: Coordinating Ministry for Economic Affairs
+    role: Geospatial Data Analyst
+    start: Mar 2017
+    end: Jan 2018
+    location: Jakarta, Indonesia
+    summary: One Map Policy, the national effort to reconcile conflicting land designations.
+    bullets:
+      - "Built and integrated thematic permit maps (mining, cultivation rights, location permits) for provinces across Sumatra and Nusa Tenggara."
+      - "Worked with regional planning agencies, land offices and mining departments to trace overlapping designations back to their source."
+
+earlier:
+  - org: BlackEarth
+    role: Consultant
+    period: "2022-2023"
+  - org: Badan Pusat Statistik
+    role: GIS Specialist
+    period: "2019"
+  - org: Spatialmate
+    role: Administrator
+    period: "2019-2023"
+  - org: Universitas Gadjah Mada
+    role: Laboratory assistant, photogrammetry and disaster mapping
+    period: "2014-2016"
+
+education:
+  - company: University of Twente, ITC
+    role: MSc Spatial Engineering
+    start: Sep 2023
+    end: Jul 2025
+    location: Enschede, Netherlands
+    summary: A project-based programme about solving societal problems with spatial data. Funded by the ITC4SE scholarship.
+    bullets:
+      - "Thesis: migrant children's well-being and urban green and blue spaces in Enschede."
+      - "Projects: drought and qanat water management in Mashhad; green-blue-grey space mapping for Kampala; local EV charging for a congested grid in Zwolle."
+
+  - company: Universitas Gadjah Mada
+    role: BSc Cartography and Remote Sensing
+    start: Sep 2012
+    end: Feb 2017
+    location: Yogyakarta, Indonesia
+    summary: Thesis on lahar (volcanic mudflow) modelling for Kelud, using field samples from three municipalities.
+    bullets:
+      - "Laboratory assistant for photogrammetry, disaster mapping and non-photographic remote sensing."
+      - "Led the Geography Study Club for a year."
+
+publications:
+  - title: Geosquare System v1 - a nation-centric hierarchical grid
+    venue: Chapter in a UGM Press volume edited by Trias Aditya
+    status: In press
+  - title: Geosquare System v2 - country datums and per-country coverages
+    venue: arXiv preprint
+    status: In preparation
+  - title: Age-cohort dasymetric allocation to 50 m cells (RIUH)
+    venue: FIT ISI 2026, Semarang
+    status: Presented; IOP proceedings in preparation
+
+skills:
+  - group: Data engineering
+    items:
+      - Python
+      - DuckDB
+      - PostGIS
+      - GDAL
+      - GeoParquet
+      - PMTiles
+      - Cloud optimised GeoTIFF
+      - object storage
+      - cloud cost control
+  - group: Geospatial
+    items:
+      - remote sensing
+      - discrete global grid systems
+      - dasymetric mapping
+      - isochrones and routing
+      - multi-criteria suitability
+      - hazard modelling
+      - spatial validation
+  - group: Methods
+    items:
+      - Ridge, random forest, gradient boosting and kernel models
+      - spatial and temporal holdouts
+      - uncertainty reporting
+      - reproducible pipelines
+  - group: Leadership
+    items:
+      - hiring
+      - performance management
+      - technical writing and standards
+      - product strategy
+      - cross-disciplinary delivery
+
+languages:
+  - name: Indonesian
+    level: Native
+  - name: Javanese
+    level: Native
+  - name: English
+    level: Professional working proficiency

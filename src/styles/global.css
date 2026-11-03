@@ -110,3 +110,97 @@ a:hover {
     rgb(245 240 230 / 0) 100%
   );
 }
+
+/* ---- ATS CV (plain variant) ---- */
+
+.ats {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 10pt;
+  line-height: 1.38;
+  color: #000;
+  background: #fff;
+  max-width: 46rem;
+  margin-inline: auto;
+  padding: 2.5rem 2rem;
+}
+
+.ats header {
+  border-bottom: 1px solid #000;
+  padding-bottom: 0.6rem;
+}
+
+.ats h1 {
+  font-size: 19pt;
+  line-height: 1.15;
+  margin: 0 0 0.15rem;
+}
+
+.ats h2 {
+  font-size: 11pt;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 1rem 0 0.35rem;
+  padding-bottom: 0.15rem;
+  border-bottom: 1px solid #000;
+}
+
+.ats h3 {
+  font-size: 10.5pt;
+  margin: 0.55rem 0 0.1rem;
+}
+
+.ats p {
+  margin: 0.2rem 0;
+}
+
+.ats .meta {
+  color: #333;
+}
+
+.ats ul {
+  /* Tailwind preflight removes list markers; the ATS CV needs them. */
+  list-style: disc;
+  margin: 0.2rem 0 0.2rem 1.4rem;
+  padding: 0;
+}
+
+.ats li {
+  margin: 0.1rem 0;
+}
+
+.ats .entry {
+  break-inside: avoid;
+}
+
+/* ---- print ---- */
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  html.print-plain,
+  html.print-plain body,
+  html.print-plain .ats {
+    background: #fff !important;
+    background-image: none !important;
+  }
+
+  html.print-plain body {
+    color: #000;
+  }
+
+  .cv-entry {
+    break-inside: avoid;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+

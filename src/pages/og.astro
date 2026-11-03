@@ -1,0 +1,51 @@
+---
+import Bare from "../layouts/Bare.astro";
+import { cv } from "../lib/cv";
+---
+<Bare title={`${cv.person.displayName} — social card`}>
+  <div class="flex h-[630px] w-[1200px] flex-col justify-between overflow-hidden px-20 py-14">
+    <div class="flex items-start justify-between gap-14">
+      <div>
+        <p class="stamp-text text-ink-soft">klaten, indonesia</p>
+        <h1 class="mt-4 text-[62px] leading-[1.02] text-ink-deep">{cv.person.displayName}</h1>
+        <p class="mt-4 text-[24px] text-ink">{cv.person.headline}</p>
+        <p class="mt-7 max-w-[680px] text-[22px] leading-snug text-ink">
+          {cv.person.positioning}
+        </p>
+      </div>
+      <img
+        src="/portrait.webp"
+        width="800"
+        height="800"
+        alt=""
+        class="cameo h-[186px] w-[186px] shrink-0 object-cover"
+      />
+    </div>
+
+    <ul class="grid grid-cols-4 gap-6 border-t rule-line pt-5">
+      {
+        cv.facts.map((f) => (
+          <li>
+            <span class="block text-[32px] leading-none text-ink-deep">{f.value}</span>
+            <span class="stamp-text mt-2 block text-ink-soft">{f.label}</span>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="flex items-end justify-between border-t rule-line pt-4">
+      <p class="stamp-text text-ink-soft">sawungrana.github.io</p>
+      <p class="stamp-text text-ink-soft">geospatial · data platforms · products</p>
+    </div>
+  </div>
+</Bare>
+
+<style is:global>
+  html,
+  body {
+    width: 1200px;
+    height: 630px;
+    margin: 0;
+    overflow: hidden;
+  }
+</style>

@@ -1,0 +1,20 @@
+---
+import Bare from "../../layouts/Bare.astro";
+import CvPlain from "../../components/cv/CvPlain.astro";
+import { cv } from "../../lib/cv";
+---
+<Bare title={`CV — ${cv.person.name}`} plain>
+  <CvPlain />
+</Bare>
+
+<style is:global>
+  /* The ATS variant: real page margins, no background, no decoration. */
+  @page {
+    size: A4;
+    margin: 12mm 14mm 12mm;
+  }
+  .ats {
+    padding: 0 !important;
+    max-width: none !important;
+  }
+</style>

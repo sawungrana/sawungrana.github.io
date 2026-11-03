@@ -1,0 +1,70 @@
+---
+import Base from "../layouts/Base.astro";
+import Rule from "../components/Rule.astro";
+import Stamp from "../components/Stamp.astro";
+
+const facts = [
+  { term: "Build", detail: "Astro, static output. No server, no database." },
+  { term: "Styling", detail: "Tailwind CSS v4, with the token set shared with lantip.space." },
+  { term: "Type", detail: "EB Garamond Variable and Fragment Mono, self-hosted through Fontsource." },
+  { term: "Ornament", detail: "Procedural guilloche, generated in the lantip.space repo." },
+  { term: "Tracking", detail: "None. No analytics, no cookies, no newsletter." },
+  { term: "CV", detail: "One YAML file, validated at build, rendered to two PDFs." },
+  { term: "JavaScript", detail: "None shipped. The site is HTML and CSS." },
+];
+---
+<Base
+  title="Colophon — Azzadiva Sawungrana"
+  description="How this site is built: Astro, Tailwind, self-hosted type, procedural ornament, no tracking."
+>
+  <div class="mx-auto max-w-4xl px-6">
+    <header class="mt-10 md:mt-14">
+      <p class="stamp-text text-ink-soft">colophon</p>
+      <h1 class="mt-3 max-w-2xl text-[2rem] leading-[1.12] text-ink-deep md:text-[2.5rem]">
+        A quiet site, because it does not need to be loud.
+      </h1>
+      <p class="mt-5 max-w-2xl text-[1.08rem]">
+        This is the sibling of{" "}
+        <a href="https://lantip.space">lantip.space</a>, which holds the tools. This one holds
+        the record. They share a design language because maintaining two idioms for one person
+        is a waste of a good afternoon.
+      </p>
+    </header>
+
+    <Rule />
+
+    <dl class="grid gap-x-8 gap-y-4 sm:grid-cols-2">
+      {
+        facts.map((f) => (
+          <div class="border-t rule-line pt-2">
+            <dt class="stamp-text text-ink-soft">{f.term}</dt>
+            <dd class="mt-1 text-[0.98rem] text-ink">{f.detail}</dd>
+          </div>
+        ))
+      }
+    </dl>
+
+    <Rule />
+
+    <div class="max-w-2xl space-y-4 pb-10">
+      <div class="flex items-center gap-3">
+        <Stamp label="on the CV" />
+      </div>
+      <p>
+        The CV is not written twice. Everything on <a href="/cv">/cv</a>, and both PDFs, comes
+        from a single YAML file that a schema validates at build time. If a field is missing or a
+        date is malformed, the build fails rather than shipping something wrong to a stranger.
+      </p>
+      <p>
+        There are two PDFs on purpose. One is designed, on paper, for a person. The other is
+        plain, white and single-column, for the software that many large employers use to read
+        applications first. A beautiful CV that a parser cannot read is a CV nobody sees.
+      </p>
+      <p class="text-[0.92rem] text-ink-soft">
+        Design and content are mine. The paper texture, the ink and terracotta palette, and the
+        ornament generator come from lantip.space. Nothing on this site is tracked, and there is
+        no cookie to consent to.
+      </p>
+    </div>
+  </div>
+</Base>

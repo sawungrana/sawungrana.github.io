@@ -10,8 +10,7 @@ design language, different job.
 
 - [Astro](https://astro.build) static output + Tailwind CSS v4
 - Fonts self-hosted via Fontsource: EB Garamond Variable, Fragment Mono
-- The only JavaScript is whatever Astro emits for the dev toolbar, which is
-  stripped from the build
+- No JavaScript shipped to the browser
 
 ## Commands
 
@@ -21,19 +20,38 @@ design language, different job.
 | `npm run dev` | Dev server at `localhost:4321` |
 | `npm run build` | Build to `./dist/` |
 | `npm run preview` | Preview the build locally |
+| `npm run render` | Build, then regenerate `cv.pdf`, `cv-plain.pdf` and `og.png` |
+| `npm run cv` | Alias for `render` |
+
+`render` needs a Chromium-based browser. It looks for Chrome, Edge and Brave in
+the usual macOS and Linux locations; override with `CHROME_BIN=/path/to/browser`.
 
 ## Structure
 
 ```
 src/
-  components/   Header, Footer, Mark, Rule, Stamp
-  layouts/      Base.astro (head, fonts, skip link)
-  ornaments/    divider, header-band, rosette (SVG, inlined via ?raw)
-  pages/        index, and later cv, work, colophon
-  styles/       global.css — design tokens and shared utilities
-_archive/       the old Jekyll resume and the W3.CSS template, kept for history
-assets-src/     full-size source images (git-ignored); optimised copies in public/
+  components/
+    cv/          CvScreen (web + designed PDF), CvPlain (ATS PDF)
+    Header, Footer, Mark, Rule, Stamp
+  data/cv.yaml   the single source of truth for the CV
+  layouts/       Base.astro (site), Bare.astro (print and OG routes)
+  lib/cv.ts      Zod schema and loader
+  ornaments/     divider, header-band, rosette (SVG, inlined via ?raw)
+  pages/         index, cv/, work/, colophon, og, sitemap.xml
+  styles/        global.css — tokens, shared utilities, ATS and print rules
+scripts/
+  render.mjs     headless Chromium → PDFs and the OG card
+_archive/        the old Jekyll resume and the W3.CSS template, kept for history
+assets-src/      full-size source images (git-ignored); optimised copies in public/
 ```
+
+## Editing the CV
+
+Everything comes from `src/data/cv.yaml`. Change it, run `npm run render`, and
+the web page and both PDFs update together. The schema in `src/lib/cv.ts` fails
+the build if a field is missing.
+
+Quote any YAML string that contains a colon, a leading dash, or a bare year.
 
 ## Deploy
 

@@ -1,0 +1,29 @@
+---
+import Bare from "../../layouts/Bare.astro";
+import CvScreen from "../../components/cv/CvScreen.astro";
+import { cv } from "../../lib/cv";
+---
+<Bare title={`CV — ${cv.person.displayName}`}>
+  <CvScreen dense />
+</Bare>
+
+<style is:global>
+  /* Full bleed, so the paper texture reaches the edge of the sheet. */
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  body {
+    margin: 0;
+  }
+  article {
+    padding: 13mm 14mm 13mm;
+  }
+  /* A4 is 762 CSS px, just under Tailwind's 768 md breakpoint, so print needs
+     its own scale. 15px root keeps body text near 10.5pt. */
+  @media print {
+    html {
+      font-size: 15px;
+    }
+  }
+</style>
