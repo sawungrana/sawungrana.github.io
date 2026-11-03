@@ -2,16 +2,18 @@
 import Base from "../../layouts/Base.astro";
 import Rule from "../../components/Rule.astro";
 import Stamp from "../../components/Stamp.astro";
+import Frieze from "../../components/Frieze.astro";
 import headerBand from "../../ornaments/header-band.svg?raw";
 
 const plates = [
   {
     numeral: "Plate I",
     title: "One platform, three agencies",
-    lede: "The same platform, sold to a second and third client instead of rebuilt.",
     body: [
-      "A national land agency needed its teams to make data-informed decisions on land availability, legal status and utilisation. We built the platform once. When a mining company and then a sovereign fund needed something adjacent, the answer was configuration, not a new codebase: the same spatial identity, the same catalogue, the same delivery surface, with their data and their analysis on top.",
-      "The first client is now on its third phase. That is the number I care about most, because a renewal is harder to fake than a new logo.",
+      "The first version was built for a national land agency. Their teams needed to know what land was available, what its legal status was, and whether it could actually be used. Ordinary work for us, except that we had usually done it one client at a time.",
+      "When a mining company needed something adjacent, I expected a second codebase. It did not turn out that way. The spatial identity, the catalogue and the delivery were the same, and their data and their analysis sat on top. The next client needed the same again.",
+      "The part I care about is the third phase. A renewal is harder to fake than a new logo. Anyone can win a pilot. Coming back a third time means the thing did the job.",
+      "But I would not call this a product business yet. Three clients on one platform is repeatability, not scale, and I would be exaggerating if I said otherwise.",
     ],
     facts: [
       { value: "3", label: "clients on one platform" },
@@ -23,11 +25,11 @@ const plates = [
   {
     numeral: "Plate II",
     title: "Population where it actually lives",
-    lede: "A dasymetric framework that puts age cohorts on a 50 m grid using open data only.",
     body: [
-      "Village totals are the wrong unit for exposure. RIUH redistributes population onto a 50 m grid across five generational cohorts, using distance-decay accessibility surfaces, open POIs and modelled building density, and preserves the official village totals exactly.",
-      "The method is multi-algorithmic, and building density dominates feature importance. Ridge regression reaches an R² of 0.94 for Gen Z and 0.92 for Gen Alpha. Everything is reproducible and built from open data, which matters in places where the commercial alternative is a licence nobody can afford.",
-      "The same surface is now being pushed toward meso-scale traffic simulation, because buying traffic data in Indonesia is both expensive and unscalable.",
+      "Village totals are the wrong unit for exposure. A flood does not stop at a boundary, and neither does heat.",
+      "RIUH puts population on a 50 m grid in five age bands, using open data only: accessibility surfaces, POIs, and a model of building density. The official village totals stay exactly as they were. That sounds like a small thing until someone checks your numbers against the government's.",
+      "Building density does most of the work. Ridge regression reaches an R² of 0.94 for Gen Z and 0.92 for Gen Alpha. I am suspicious of R² on spatial data in general, so I would rather show you the holdout than the score.",
+      "The same surface is going into traffic simulation at meso scale now, because buying traffic data in Indonesia is both expensive and unscalable. So we are building our own. I do not yet know whether that was the right call.",
     ],
     facts: [
       { value: "50 m", label: "cell size" },
@@ -39,11 +41,12 @@ const plates = [
   {
     numeral: "Plate III",
     title: "The bill and the bus factor",
-    lede: "Precompute once, serve cheaply, and make sure more than two people can run it.",
     body: [
-      "On-demand compute is the right tool for exploration and the wrong tool for serving a layer that never changes. Moving the serving path to batch precomputation, with Cloud Optimised GeoTIFF, GeoParquet and PMTiles behind a thin tile server, cut total infrastructure cost by 32% and made analysis roughly four times faster.",
-      "The cost curve is the argument. Serving every national dataset now costs about $23 a month, and the eleventh client on the same data costs about $20 more than the first. One client pays for the map; the rest are nearly free.",
-      "I also care that the pipeline survives me. When I started, two people could run it end to end. It is five now, and that is the change I would defend hardest.",
+      "The bill was the easy part to explain.",
+      "We had been computing on demand for layers that never change. That is the wrong shape of work. You pay every time somebody looks. Moving the serving path to precomputed Cloud Optimised GeoTIFF, GeoParquet and PMTiles behind a thin tile server cut total infrastructure cost by 32% and made analysis about four times faster.",
+      "The number I actually like is smaller. Serving every national dataset costs about $23 a month, and the eleventh client on the same data costs about $20 more than the first. One client pays for the map and the rest are nearly free. That is the argument for a platform, and you can check it against a bill.",
+      "The other half is less quotable. When I started, two people could run the pipeline end to end. That is a company that stops when those two are on leave. It is five people now, and it is the change I would defend hardest.",
+      "One caveat, because I would rather say it than have you find it: we review infrastructure in aggregate. I do not track margin per deal, so I cannot tell you what any single one earned.",
     ],
     facts: [
       { value: "-32%", label: "total infrastructure" },
@@ -51,7 +54,7 @@ const plates = [
       { value: "4x", label: "faster analysis" },
       { value: "2 to 5", label: "people who can run it" },
     ],
-    note: "Infrastructure is reviewed in aggregate. Per-deal margin is not tracked, and I would rather say so than invent a number.",
+    pipeline: true,
   },
 ];
 
@@ -64,7 +67,7 @@ const pipeline = [
 ];
 ---
 <Base
-  title="Work — Azzadiva Sawungrana"
+  title="Work — Azza Sawungrana"
   description="Three pieces of work: a platform resold to three agencies, a dasymetric population framework, and the migration that cut infrastructure cost by a third."
 >
   <div class="ornament w-full text-ink/30" aria-hidden="true" set:html={headerBand}></div>
@@ -73,17 +76,27 @@ const pipeline = [
     <header class="mt-8 md:mt-12">
       <p class="stamp-text text-ink-soft">selected work</p>
       <h1 class="mt-3 max-w-2xl text-[2rem] leading-[1.12] text-ink-deep md:text-[2.5rem]">
-        Three things worth explaining properly.
+        Three things I can actually explain.
       </h1>
-      <p class="mt-5 max-w-2xl text-[1.08rem]">
-        Not a portfolio. Three projects where the decision was interesting, the number is checkable,
-        and the thing I would do differently is easy to name.
-      </p>
+      <div class="mt-5 max-w-2xl space-y-4 text-[1.06rem]">
+        <p>
+          I do not like portfolios that are mostly a list of things someone was near. So here are
+          three, picked because the decision was interesting and the number can be checked.
+        </p>
+        <p>
+          Client names are left out where the agreements ask for it, and I have not published
+          contract values. Ask me in a conversation and I will give you the detail.
+        </p>
+      </div>
     </header>
 
-    <Rule />
+    <Frieze
+      src="/plates/hondius.webp"
+      alt="Hondius, Insulae Indiae Orientalis: an engraved chart of the East Indies"
+      caption="hondius, insulae indiae orientalis · public domain, via wikimedia commons"
+    />
 
-    <div class="space-y-16 pb-4">
+    <div class="space-y-14 pb-4">
       {
         plates.map((plate) => (
           <section class="grid gap-5 md:grid-cols-[7rem_1fr] md:gap-8">
@@ -94,11 +107,10 @@ const pipeline = [
               <h2 class="text-[1.45rem] leading-snug text-ink-deep md:text-[1.6rem]">
                 {plate.title}
               </h2>
-              <p class="mt-2 text-[1.05rem] text-ink">{plate.lede}</p>
 
               <div class="mt-4 max-w-2xl space-y-3">
                 {plate.body.map((p) => (
-                  <p class="text-[0.98rem]">{p}</p>
+                  <p class="text-[1rem]">{p}</p>
                 ))}
               </div>
 
@@ -111,11 +123,7 @@ const pipeline = [
                 ))}
               </dl>
 
-              {plate.note && (
-                <p class="mt-3 text-[0.88rem] italic text-ink-soft">{plate.note}</p>
-              )}
-
-              {plate.numeral === "Plate III" && (
+              {plate.pipeline && (
                 <ol class="mt-8 grid gap-2 sm:grid-cols-5" aria-label="serving pipeline">
                   {pipeline.map((s) => (
                     <li class="plate-frame bg-paper-deep/40 px-3 py-3">
@@ -134,9 +142,12 @@ const pipeline = [
 
     <Rule />
 
-    <p class="max-w-2xl pb-10 text-[0.92rem] text-ink-soft">
-      Client names are left out where agreements ask for it, and contract values are not published.
-      Happy to go into detail in a conversation.
-    </p>
+    <div class="max-w-2xl space-y-4 pb-10">
+      <p>
+        The thing I keep coming back to is the second client. The first one is a project. The
+        second one is where you find out whether you built a product or a very specific machine.
+      </p>
+      <p>That is the work I want more of.</p>
+    </div>
   </div>
 </Base>

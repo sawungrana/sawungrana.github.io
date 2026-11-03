@@ -33,6 +33,7 @@ const CvSchema = z.object({
   person: z.object({
     name: z.string().min(1),
     displayName: z.string().min(1),
+    legalName: z.string().min(1).optional(),
     headline: z.string().min(1),
     positioning: z.string().min(1),
     location: z.string().min(1),

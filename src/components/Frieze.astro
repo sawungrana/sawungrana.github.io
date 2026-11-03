@@ -1,0 +1,37 @@
+---
+/**
+ * A framed engraving band. The plates are public-domain Dutch East Indies maps
+ * converted to navy duotone by tools/plates.py, so they read as paper rather
+ * than as photographs behind the type.
+ */
+interface Props {
+  src: string;
+  alt: string;
+  caption?: string;
+  height?: string;
+  class?: string;
+  imgClass?: string;
+}
+
+const {
+  src,
+  alt,
+  caption,
+  height = "h-[190px] md:h-[260px]",
+  class: figureClass = "my-9",
+  imgClass = "block w-full object-cover",
+} = Astro.props;
+---
+<figure class={figureClass}>
+  <div class="plate-frame overflow-hidden bg-paper-deep">
+    <img
+      src={src}
+      alt={alt}
+      width="1440"
+      height="480"
+      loading="lazy"
+      class:list={[imgClass, height]}
+    />
+  </div>
+  {caption && <figcaption class="stamp-text mt-2 text-ink-soft/80">{caption}</figcaption>}
+</figure>

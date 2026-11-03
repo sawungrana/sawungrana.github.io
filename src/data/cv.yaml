@@ -7,8 +7,11 @@
 # the build fails.
 
 person:
-  name: Azzadiva Ravi Sawungrana
-  displayName: Azzadiva Sawungrana
+  # Shown everywhere. The full name is kept only for structured data, so that
+  # someone searching the old name still lands here.
+  name: Azza Sawungrana
+  displayName: Azza Sawungrana
+  legalName: Azzadiva Ravi Sawungrana
   headline: Head of Data at Geosquare
   positioning: I build geospatial data platforms, and I turn bespoke delivery into products that sell twice.
   location: Klaten, Indonesia

@@ -2,6 +2,7 @@
 import Base from "../layouts/Base.astro";
 import Rule from "../components/Rule.astro";
 import Stamp from "../components/Stamp.astro";
+import Frieze from "../components/Frieze.astro";
 import headerBand from "../ornaments/header-band.svg?raw";
 
 const elsewhere = [
@@ -12,7 +13,7 @@ const elsewhere = [
 ];
 ---
 <Base
-  title="Azzadiva Sawungrana — geospatial data platforms"
+  title="Azza Sawungrana — geospatial data platforms"
   description="Head of Data at Geosquare. I build geospatial data platforms, and I turn bespoke delivery into products that sell twice."
 >
   <div class="ornament w-full text-ink/35" aria-hidden="true" set:html={headerBand}></div>
@@ -23,7 +24,7 @@ const elsewhere = [
         src="/portrait.webp"
         width="800"
         height="800"
-        alt="Azzadiva Sawungrana"
+        alt="Azza Sawungrana"
         class="cameo relative z-10 h-28 w-28 shrink-0 object-cover md:h-36 md:w-36"
         loading="eager"
       />
@@ -31,7 +32,7 @@ const elsewhere = [
       <div class="relative z-10">
         <p class="stamp-text text-ink-soft">klaten, indonesia</p>
         <h1 class="mt-3 text-[2rem] leading-[1.1] text-ink-deep md:text-[2.6rem]">
-          Azzadiva Sawungrana
+          Azza Sawungrana
         </h1>
         <p class="mt-5 max-w-xl text-[1.18rem] leading-[1.5] text-ink-deep">
           I build geospatial data platforms, and I turn bespoke delivery into products that
@@ -60,6 +61,12 @@ const elsewhere = [
         <a href="/work">work</a>, and a short account of how it is made.
       </p>
     </div>
+
+    <Frieze
+      src="/plates/indies.webp"
+      alt="Nederlandsch Indie, 1873: an engraved map of the Indonesian archipelago"
+      caption="nederlandsch indie, 1873 · public domain, via wikimedia commons"
+    />
 
     <Rule tight />
 

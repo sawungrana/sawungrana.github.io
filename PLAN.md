@@ -58,6 +58,20 @@ Three deliberate differences from lantip:
   scaled into a 128 px rule it lands at 0.075 CSS px and disappears. This site
   uses a 48 × 16 lozenge drawn at the size it is displayed.
 
+## 4b. Plates
+
+Every page carries one public-domain map plate, plus a strip in the footer,
+provenance in `SOURCES.md`. `tools/plates.py` crops, duotones and fades them.
+
+Maps are not engravings. Engravings are paper with dark lines; maps are large
+mid-tone fields. At the lantip settings the plates read as grey slabs, so the
+script raises the black point, drops gamma below 1, and blends toward paper per
+plate. The `fade` value is the knob.
+
+The designed CV uses `batavia-print.webp`, a 900 px band at fade 0.8. Embedding
+the full plate tripled the PDF to 2.2 MB and pushed it to four pages; the
+narrow one keeps it at three pages and 1.1 MB. The plain CV has no plate at all.
+
 ## 5. CV pipeline
 
 ```
@@ -95,6 +109,6 @@ fourth page.
 - Confirm `azzadv@outlook.com` is still the address that should be public.
 - Preview one printed sheet on a real printer: decide whether the designed PDF
   keeps the paper tint or flips to white for physical printing.
-- `cv.pdf` is ~850 KB because the paper texture rasterises on each page. Fine
-  for email; worth revisiting if it ever needs to be smaller.
+- `cv.pdf` is ~1.1 MB because the paper texture and the plate rasterise on each
+  page. Fine for email; worth revisiting if it ever needs to be smaller.
 - Consider a `cv.json` output for reuse beyond the site.

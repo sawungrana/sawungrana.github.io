@@ -1,35 +1,63 @@
 ---
 import Base from "../layouts/Base.astro";
 import Rule from "../components/Rule.astro";
-import Stamp from "../components/Stamp.astro";
+import Frieze from "../components/Frieze.astro";
 
 const facts = [
   { term: "Build", detail: "Astro, static output. No server, no database." },
-  { term: "Styling", detail: "Tailwind CSS v4, with the token set shared with lantip.space." },
-  { term: "Type", detail: "EB Garamond Variable and Fragment Mono, self-hosted through Fontsource." },
-  { term: "Ornament", detail: "Procedural guilloche, generated in the lantip.space repo." },
+  { term: "Styling", detail: "Tailwind v4, with the tokens shared with lantip.space." },
+  { term: "Type", detail: "EB Garamond Variable and Fragment Mono, served from here." },
+  { term: "Maps", detail: "Public-domain Dutch East Indies charts, converted to duotone." },
   { term: "Tracking", detail: "None. No analytics, no cookies, no newsletter." },
-  { term: "CV", detail: "One YAML file, validated at build, rendered to two PDFs." },
-  { term: "JavaScript", detail: "None shipped. The site is HTML and CSS." },
+  { term: "JavaScript", detail: "None shipped. It is HTML and CSS." },
 ];
 ---
 <Base
-  title="Colophon — Azzadiva Sawungrana"
-  description="How this site is built: Astro, Tailwind, self-hosted type, procedural ornament, no tracking."
+  title="Colophon — Azza Sawungrana"
+  description="How this site is made: Astro, Tailwind, self-hosted type, public-domain maps, a CV built from one file, and no tracking."
 >
   <div class="mx-auto max-w-4xl px-6">
     <header class="mt-10 md:mt-14">
       <p class="stamp-text text-ink-soft">colophon</p>
       <h1 class="mt-3 max-w-2xl text-[2rem] leading-[1.12] text-ink-deep md:text-[2.5rem]">
-        A quiet site, because it does not need to be loud.
+        I built this because I wanted a CV I could keep true.
       </h1>
-      <p class="mt-5 max-w-2xl text-[1.08rem]">
-        This is the sibling of{" "}
-        <a href="https://lantip.space">lantip.space</a>, which holds the tools. This one holds
-        the record. They share a design language because maintaining two idioms for one person
-        is a waste of a good afternoon.
-      </p>
+      <div class="mt-5 max-w-2xl space-y-4 text-[1.06rem]">
+        <p>
+          The old one was a template I had stopped believing in. It still called me a student at
+          Twente, which stopped being accurate in July 2025, and every time I updated it I had to
+          remember which of four places held the same sentence.
+        </p>
+        <p>
+          So the first job was to make the CV exist once.
+        </p>
+      </div>
     </header>
+
+    <Frieze
+      src="/plates/java.webp"
+      alt="Oudheidkundige kaart van West-Java: an engraved map of the north coast"
+      caption="oudheidkundige kaart van west-java · public domain, via wikimedia commons"
+    />
+
+    <div class="max-w-2xl space-y-4">
+      <p>
+        Everything on <a href="/cv">/cv</a>, and both PDFs, comes from a single YAML file. A schema
+        checks it when the site builds. If a date is wrong or a field is missing, the build fails
+        and tells me which line. That is most of the reason this site exists.
+      </p>
+      <p>
+        There are two PDFs on purpose. One is designed, on paper, for a person to read. The other
+        is plain and white and single column, for the software that many large employers run
+        before a person sees anything. A beautiful CV that a parser cannot read is a CV nobody
+        reads.
+      </p>
+      <p>
+        The paper texture and the ornaments come from{" "}
+        <a href="https://lantip.space">lantip.space</a>, which is the other site I keep. Two visual
+        languages for one person seemed like a waste of a good afternoon.
+      </p>
+    </div>
 
     <Rule />
 
@@ -47,23 +75,16 @@ const facts = [
     <Rule />
 
     <div class="max-w-2xl space-y-4 pb-10">
-      <div class="flex items-center gap-3">
-        <Stamp label="on the CV" />
-      </div>
       <p>
-        The CV is not written twice. Everything on <a href="/cv">/cv</a>, and both PDFs, comes
-        from a single YAML file that a schema validates at build time. If a field is missing or a
-        date is malformed, the build fails rather than shipping something wrong to a stranger.
+        The maps are real ones. They come from the Rijksmuseum and the Dutch National Archives by
+        way of Wikimedia Commons, all public domain, and a small script in <code>tools/</code>
+        turns them into navy on paper. Batavia, the Javanese north coast, the archipelago as it
+        was drawn in 1873. I like that the paper under this site is a map of where I am from.
       </p>
       <p>
-        There are two PDFs on purpose. One is designed, on paper, for a person. The other is
-        plain, white and single-column, for the software that many large employers use to read
-        applications first. A beautiful CV that a parser cannot read is a CV nobody sees.
-      </p>
-      <p class="text-[0.92rem] text-ink-soft">
-        Design and content are mine. The paper texture, the ink and terracotta palette, and the
-        ornament generator come from lantip.space. Nothing on this site is tracked, and there is
-        no cookie to consent to.
+        Nothing here is tracked. There is no cookie prompt because there are no cookies, and the
+        whole thing is HTML and CSS. It will still work when the tools I used to build it are
+        gone.
       </p>
     </div>
   </div>

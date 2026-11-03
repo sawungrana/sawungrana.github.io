@@ -21,7 +21,7 @@ const jsonLd = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Person",
   name: cv.person.name,
-  alternateName: cv.person.displayName,
+  alternateName: cv.person.legalName ?? cv.person.displayName,
   jobTitle: cv.person.headline,
   description: cv.person.positioning,
   url: site.href,

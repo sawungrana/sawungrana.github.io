@@ -22,6 +22,7 @@ design language, different job.
 | `npm run preview` | Preview the build locally |
 | `npm run render` | Build, then regenerate `cv.pdf`, `cv-plain.pdf` and `og.png` |
 | `npm run cv` | Alias for `render` |
+| `python3 tools/plates.py` | Regenerate the map plates from `assets-src/plates/` |
 
 `render` needs a Chromium-based browser. It looks for Chrome, Edge and Brave in
 the usual macOS and Linux locations; override with `CHROME_BIN=/path/to/browser`.
@@ -41,6 +42,7 @@ src/
   styles/        global.css — tokens, shared utilities, ATS and print rules
 scripts/
   render.mjs     headless Chromium → PDFs and the OG card
+tools/plates.py  map scans -> navy duotone plates (provenance in SOURCES.md)
 _archive/        the old Jekyll resume and the W3.CSS template, kept for history
 assets-src/      full-size source images (git-ignored); optimised copies in public/
 ```
@@ -64,5 +66,5 @@ appear.
 
 ## Licence
 
-Site content and design: © Azzadiva Sawungrana. Ornament SVGs are derived from
+Site content and design: © Azza Sawungrana. Ornament SVGs are derived from
 the lantip.space generator (`tools/guilloche.mjs` in that repo). Site code: MIT.

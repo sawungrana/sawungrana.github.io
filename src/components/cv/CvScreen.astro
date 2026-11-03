@@ -1,11 +1,14 @@
 ---
 import { cv } from "../../lib/cv";
+import Frieze from "../Frieze.astro";
 
 interface Props {
   dense?: boolean;
+  plate?: boolean;
+  plateHeight?: string;
 }
 
-const { dense = false } = Astro.props;
+const { dense = false, plate = false, plateHeight = "h-[120px] md:h-[150px]" } = Astro.props;
 
 const gap = dense ? "space-y-5" : "space-y-7";
 const entryGap = dense ? "space-y-5" : "space-y-8";
@@ -14,6 +17,17 @@ const bodyText = dense ? "text-[0.95rem] leading-[1.5]" : "text-[1rem] leading-[
 ---
 
 <article class:list={["mx-auto max-w-4xl px-6", dense ? "py-6" : "py-10 md:py-14"]}>
+  {
+    plate && (
+      <Frieze
+        src={dense ? "/plates/batavia-print.webp" : "/plates/batavia.webp"}
+        alt="Plattegrond van Batavia, engraved plan of the city grid"
+        height={dense ? "h-[64px]" : plateHeight}
+        class={dense ? "mb-4 mt-0" : "my-9"}
+      />
+    )
+  }
+
   <!-- scan band: what a reader needs before deciding to read -->
   <header>
     <p class="stamp-text text-ink-soft">{cv.person.location}</p>
