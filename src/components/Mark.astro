@@ -1,0 +1,20 @@
+---
+// A grid cell, inked. The whole practice in one glyph.
+const { size = 20 } = Astro.props;
+---
+<svg
+  width={size}
+  height={size}
+  viewBox="0 0 24 24"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+>
+  <rect x="1.25" y="1.25" width="21.5" height="21.5" stroke="currentColor" stroke-width="1.2"></rect>
+  <path
+    d="M8.42 1.25V22.75M15.58 1.25V22.75M1.25 8.42H22.75M1.25 15.58H22.75"
+    stroke="currentColor"
+    stroke-width="0.75"
+    opacity="0.5"></path>
+  <rect x="8.42" y="8.42" width="7.16" height="7.16" fill="currentColor"></rect>
+</svg>

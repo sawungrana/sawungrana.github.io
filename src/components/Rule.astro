@@ -1,0 +1,14 @@
+---
+import divider from "../ornaments/divider.svg?raw";
+
+interface Props {
+  tight?: boolean;
+}
+
+const { tight = false } = Astro.props;
+---
+<div class:list={["flex items-center gap-4", tight ? "py-2" : "py-5"]} aria-hidden="true">
+  <span class="h-px flex-1 bg-rule"></span>
+  <span class="ornament w-12 shrink-0 text-ink-soft/70" set:html={divider}></span>
+  <span class="h-px flex-1 bg-rule"></span>
+</div>

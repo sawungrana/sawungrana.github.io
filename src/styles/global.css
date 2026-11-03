@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #f5f0e6;
+  --color-paper-deep: #ece4d4;
+  --color-ink: #1d3a5c;
+  --color-ink-deep: #142c47;
+  --color-ink-soft: #4a6486;
+  --color-rule: rgb(29 58 92 / 0.18);
+  --color-rule-strong: rgb(29 58 92 / 0.42);
+  --color-accent: #a8451f;
+  --color-accent-bright: #c05a33;
+
+  --font-sans: "EB Garamond Variable", "EB Garamond", Georgia, "Times New Roman", serif;
+  --font-mono: "Fragment Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+
+html {
+  background-color: var(--color-paper);
+}
+
+body {
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.11 0 0 0 0 0.23 0 0 0 0 0.36 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+::selection {
+  background: rgb(192 90 51 / 0.28);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+a {
+  color: var(--color-accent);
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 0.06em;
+}
+
+a:hover {
+  color: var(--color-accent-bright);
+}
+
+/* ---- shared register utilities ---- */
+
+.stamp-text {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.rule-line {
+  border-color: var(--color-rule);
+}
+
+/* double frame used on plates: outer hairline + inset ring */
+.plate-frame {
+  border: 1px solid var(--color-rule);
+  box-shadow:
+    inset 0 0 0 4px var(--color-paper),
+    inset 0 0 0 5px var(--color-rule);
+}
+
+/* portrait medallion: hairline, paper gap, outer hairline */
+.cameo {
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 1px var(--color-rule-strong),
+    0 0 0 5px var(--color-paper),
+    0 0 0 6px var(--color-rule);
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  z-index: 50;
+  background: var(--color-paper);
+  border: 1px solid var(--color-ink);
+  padding: 0.4rem 0.75rem;
+}
+
+.ornament svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Paper veil: engraving ghosts through behind the text, fades out below it.
+   Keep text inside the >=0.88 band (pair with pb-32). */
+.scrim-fade {
+  background: linear-gradient(
+    to bottom,
+    rgb(245 240 230 / 0.92) 0%,
+    rgb(245 240 230 / 0.88) 72%,
+    rgb(245 240 230 / 0.45) 90%,
+    rgb(245 240 230 / 0) 100%
+  );
+}

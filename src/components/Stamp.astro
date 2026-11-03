@@ -1,0 +1,17 @@
+---
+interface Props {
+  label: string;
+  tone?: "accent" | "muted" | "ink";
+}
+
+const { label, tone = "muted" } = Astro.props;
+const tones = {
+  accent: "text-accent border-accent/60",
+  muted: "text-ink-soft border-rule-strong",
+  ink: "text-ink-deep border-ink-deep/60",
+};
+---
+<span
+  class:list={["stamp-text inline-block border px-2 py-[0.28rem] leading-none", tones[tone]]}
+  >{label}</span
+>
