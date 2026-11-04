@@ -199,6 +199,13 @@ a:hover {
     break-inside: avoid;
   }
 
+  /* Never leave a section or role heading alone at the foot of a page. */
+  h2,
+  h3 {
+    break-after: avoid;
+    break-inside: avoid;
+  }
+
   a {
     text-decoration: none;
   }
