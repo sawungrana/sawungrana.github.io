@@ -44,7 +44,7 @@ facts:
   - value: "-32%"
     label: infrastructure cost
   - value: "$23"
-    label: national dataset served
+    label: all national data, monthly
   - value: "4"
     label: people led
 
@@ -59,7 +59,7 @@ experience:
     bullets:
       - "Lead the data function: platform architecture, engineering standards, the team, and what it costs to run."
       - "Took a platform built for one national land agency and sold it to two more clients, with a third in discussion. The first client is now on its third phase."
-      - "Cut total cloud spend by 32%. Serving every national dataset now costs about $23 a month, and the marginal cost of the eleventh client on the same data is about $20."
+      - "Cut total cloud spend by 32%. The whole national dataset now sits in object storage for about $23 a month, so a new client adds compute rather than another copy of the data."
       - "Moved the bus factor from 2 people who could run the pipeline end to end to 5."
       - "Wrote the platform and portfolio strategy: six reusable engines, six product lines, and the sequence for getting from one to the other."
       - "Building KYL, a recurring product priced by the area a client needs."
