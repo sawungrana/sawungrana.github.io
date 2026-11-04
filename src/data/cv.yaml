@@ -13,7 +13,7 @@ person:
   displayName: Azza Sawungrana
   legalName: Azzadiva Ravi Sawungrana
   headline: Head of Data at Geosquare
-  positioning: I build geospatial data platforms, and I turn bespoke delivery into products that sell twice.
+  positioning: National datasets, the standards around them, and what they cost to serve.
   location: Klaten, Indonesia
   email: azzadv@outlook.com
   links:
@@ -32,10 +32,11 @@ person:
       platform architecture, the standards the team works to, and what it costs
       to run.
     - >-
-      I have led the move from bespoke delivery to repeatable product twice, at
-      Bhumi Varta and at Geosquare, and I am building a third attempt now. My
-      work sits where data engineering meets product judgement. I care about the
-      cost of serving the second client, not only the quality of the first map.
+      The thread through Bhumi Varta and Geosquare has been the same one: taking
+      delivery that was built for one client and making it work for the next. My
+      work sits where data engineering meets product judgement, and I care about
+      the cost of serving the second client, not only the quality of the first
+      map.
 
 facts:
   - value: "9 yrs"
